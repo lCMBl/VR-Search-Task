@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Character Animation Event
+  m_EditorClassIdentifier: 
+  streamType: Markers
+  channelFormat: 3
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: characterID
+    type: int
+  - variableName: eventName
+    type: string
+  channelDescriptions:
+  - name: Character ID
+    description: The ID of the character (it's index in the character pool). IDs
+      starting with 1 are targets, 2 are easy distractors, and 3 are hard distractors
+    argumentPath: characterID.ToString()
+    properties: []
+  - name: Event Name
+    description: 'The name of the event that the character''s animator triggered.
+      One of: Active, Inactive,  Fire or GotShot'
+    argumentPath: eventName
+    properties: []

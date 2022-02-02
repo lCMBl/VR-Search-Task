@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Gaze Data
+  m_EditorClassIdentifier: 
+  streamType: Gaze
+  channelFormat: 1
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: valid
+    type: bool
+  - variableName: gazePoint
+    type: Vector3
+  - variableName: target
+    type: Transform
+  - variableName: eyeData
+    type: EyeData_v2
+  - variableName: worldAngles
+    type: Vector3
+  - variableName: eyeInHeadAngles
+    type: Vector3
+  channelDescriptions:
+  - name: Eye Data Timestamp
+    description: The eye tracker timestamp of the eye data sample used to collect
+      this gaze sample
+    argumentPath: eyeData.timestamp
+    properties: []
+  - name: Eye Data Frame Sequence
+    description: The frame sequence number of the eye data sample used to collect
+      this gaze sample. Should increment by one for each sample.
+    argumentPath: eyeData.frame_sequence
+    properties: []
+  - name: Gaze Validity
+    description: 0 if the current gaze stream is invalid, 1 if it is valid
+    argumentPath: 'valid ? 1f : 0f'
+    properties: []
+  - name: Gaze Point Position X
+    description: The X position of the gaze point in world coordinates
+    argumentPath: gazePoint.x
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Point Position Y
+    description: The Y position of the gaze point in world coordinates
+    argumentPath: gazePoint.y
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Point Position Z
+    description: The Z position of the gaze point in world coordinates
+    argumentPath: gazePoint.z
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Point Relative Position X
+    description: The X position of the gaze point relative to the center of the current
+      gaze target
+    argumentPath: 'target != null ? target.transform.InverseTransformPoint(gazePoint).x
+      : 0f'
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Point Relative Position Y
+    description: The Y position of the gaze point relative to the center of the current
+      gaze target
+    argumentPath: 'target != null ? target.transform.InverseTransformPoint(gazePoint).y
+      : 0f'
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Point Relative Position Z
+    description: The Z position of the gaze point relative to the center of the current
+      gaze target
+    argumentPath: 'target != null ? target.transform.InverseTransformPoint(gazePoint).z
+      : 0f'
+    properties:
+    - name: Units
+      value: Meters
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Angle
+    description: The angle of the gaze relative to the world's forward vector (0,
+      0, 1)
+    argumentPath: worldAngles.z
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Angle X
+    description: The XZ component of the gaze angle relative to the world's forward
+      vector (0, 0, 1)
+    argumentPath: worldAngles.x
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity
+  - name: Gaze Angle Y
+    description: The YZ component of the gaze angle relative to the world's forward
+      vector (0, 0, 1)
+    argumentPath: worldAngles.y
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity
+  - name: Eye in Head Angle
+    description: The angle of the eye relative to the head's forward vector
+    argumentPath: eyeInHeadAngles.z
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity
+  - name: Eye in Head Angle X
+    description: The XZ component of the eye angle relative to the head's forward
+      vector
+    argumentPath: eyeInHeadAngles.x
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity
+  - name: Eye in Head Angle Y
+    description: The YZ component of the eye angle relative to the head's forward
+      vector
+    argumentPath: eyeInHeadAngles.y
+    properties:
+    - name: Units
+      value: Degrees
+    - name: Coordinate System
+      value: Unity

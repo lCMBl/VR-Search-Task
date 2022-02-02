@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Vive Pro Eye Data
+  m_EditorClassIdentifier: 
+  streamType: Eye
+  channelFormat: 1
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: eyeData
+    type: EyeData_v2
+  - variableName: vb
+    type: VerboseData
+  channelDescriptions:
+  - name: Eye Data Timestamp
+    description: The timestamp for this sample as recorded by the eye tracker
+    argumentPath: eyeData.timestamp
+    properties: []
+  - name: Eye Data Frame Sequence
+    description: The id number for this sample of eye data, assigned by the eye tracker
+    argumentPath: eyeData.frame_sequence
+    properties: []
+  - name: Combined Convergence Distance
+    description: Distance for the eye gaze direction to converge
+    argumentPath: vb.combined.convergence_distance_mm
+    properties:
+    - name: Unit
+      value: Millimeters
+  - name: Combined Convergence Distance Validity
+    description: Is the convergence distance valid? 1 if valid, 0 if invalid
+    argumentPath: 'vb.combined.convergence_distance_validity ? 1f: 0f'
+    properties: []
+  - name: Combined Eye Data Validity Bitmask
+    description: Whole number representing which of the combined eye data fields
+      are valid. For combined eyes, a valid number is 3, signalling that both the
+      gaze origin and direction are valid.
+    argumentPath: vb.combined.eye_data.eye_data_validata_bit_mask
+    properties:
+    - name: GazeOriginValidBinary
+      value: 00001
+    - name: GazeOriginValidDecimal
+      value: 1
+    - name: GazeDirectionValidBinary
+      value: 00010
+    - name: GazeDirectionValidDecimal
+      value: 2
+  - name: Combined Eye Openness
+    description: 0 if the eyes are all the way closed, 1 if all the way open
+    argumentPath: vb.combined.eye_data.eye_openness
+    properties: []
+  - name: Combined Gaze Direction X
+    description: The x component of the normalized x, y, z vector representing the
+      combined gaze direction
+    argumentPath: vb.combined.eye_data.gaze_direction_normalized.x
+    properties: []
+  - name: Combined Gaze Direction Y
+    description: The y component of the normalized x, y, z vector representing the
+      combined gaze direction
+    argumentPath: vb.combined.eye_data.gaze_direction_normalized.y
+    properties: []
+  - name: Combined Gaze Direction Z
+    description: The z component of the normalized x, y, z vector representing the
+      combined gaze direction
+    argumentPath: vb.combined.eye_data.gaze_direction_normalized.z
+    properties: []
+  - name: Combined Gaze Origin X
+    description: The x component of the x, y, z vector representing the combined
+      gaze origin
+    argumentPath: vb.combined.eye_data.gaze_origin_mm.x
+    properties:
+    - name: Unit
+      value: Millimeters
+  - name: Combined Gaze Origin Y
+    description: The y component of the x, y, z vector representing the combined
+      gaze origin
+    argumentPath: vb.combined.eye_data.gaze_origin_mm.y
+    properties:
+    - name: Unit
+      value: Millimeters
+  - name: Combined Gaze Origin Z
+    description: The z component of the normalized x, y, z vector representing the
+      combined gaze direction
+    argumentPath: vb.combined.eye_data.gaze_origin_mm.z
+    properties:
+    - name: Unit
+      value: Millimeters
+  - name: Combined Pupil Diameter
+    description: The combined diameter of the pupil, in millimeters
+    argumentPath: vb.combined.eye_data.pupil_diameter_mm
+    properties: []
+  - name: Combined Pupil Position X
+    description: The x component of the normalized x, y vector representing the combined
+      pupil position in the sensor area
+    argumentPath: vb.combined.eye_data.pupil_position_in_sensor_area.x
+    properties: []
+  - name: Combined Pupil Position Y
+    description: The y component of the normalized x, y vector representing the combined
+      pupil position in the sensor area
+    argumentPath: vb.combined.eye_data.pupil_position_in_sensor_area.y
+    properties: []
+  - name: Left Eye Data Validity Bitmask
+    description: Whole number representing which of the left eye data fields are
+      valid. 31 means all valid, where 23 would indicate the eye opennes is invalid
+      (31 - 8)
+    argumentPath: vb.left.eye_data_validata_bit_mask
+    properties:
+    - name: GazeOriginValidBinary
+      value: 00001
+    - name: GazeDirectionBinary
+      value: 00010
+    - name: PupilDiameterValidBinary
+      value: 00100
+    - name: EyeOpennessValidBinary
+      value: 01000
+    - name: PupilPositionValidBinary
+      value: 10000
+  - name: Left Eye Openness
+    description: 0 if the eyes are all the way closed, 1 if all the way open
+    argumentPath: vb.left.eye_openness
+    properties: []
+  - name: Left Gaze Direction X
+    description: The x component of the normalized x, y, z vector representing the
+      left gaze direction
+    argumentPath: vb.left.gaze_direction_normalized.x
+    properties: []
+  - name: Left Gaze Direction Y
+    description: The y component of the normalized x, y, z vector representing the
+      left gaze direction
+    argumentPath: vb.left.gaze_direction_normalized.y
+    properties: []
+  - name: Left Gaze Direction Z
+    description: The z component of the normalized x, y, z vector representing the
+      left gaze direction
+    argumentPath: vb.left.gaze_direction_normalized.z
+    properties: []
+  - name: Left Gaze Origin X
+    description: The x component of the x, y, z vector representing the left gaze
+      origin
+    argumentPath: vb.left.gaze_origin_mm.x
+    properties: []
+  - name: Left Gaze Origin Y
+    description: The y component of the x, y, z vector representing the left gaze
+      origin
+    argumentPath: vb.left.gaze_origin_mm.y
+    properties: []
+  - name: Left Gaze Origin Z
+    description: The z component of the x, y, z vector representing the left gaze
+      origin
+    argumentPath: vb.left.gaze_origin_mm.z
+    properties: []
+  - name: Left Pupil Diameter
+    description: The left diameter of the pupil, in millimeters
+    argumentPath: vb.left.pupil_diameter_mm
+    properties: []
+  - name: Left Pupil Position X
+    description: The x component of the normalized x, y vector representing the left
+      pupil position in the sensor area
+    argumentPath: vb.left.pupil_position_in_sensor_area.x
+    properties: []
+  - name: Left Pupil Position Y
+    description: The y component of the normalized x, y vector representing the left
+      pupil position in the sensor area
+    argumentPath: vb.left.pupil_position_in_sensor_area.y
+    properties: []
+  - name: Right Eye Data Validity Bitmask
+    description: Whole number representing which of the right eye data fields are
+      valid. 31 means all valid, where 23 would indicate the eye openness is invalid
+      (31 - 8)
+    argumentPath: vb.right.eye_data_validata_bit_mask
+    properties:
+    - name: GazeOriginValidBinary
+      value: 00001
+    - name: GazeDirectionBinary
+      value: 00010
+    - name: PupilDiameterValidBinary
+      value: 00100
+    - name: EyeOpennessValidBinary
+      value: 01000
+    - name: PupilPositionValidBinary
+      value: 10000
+  - name: Right Eye Openness
+    description: 0 if the eyes are all the way closed, 1 if all the way open
+    argumentPath: vb.right.eye_openness
+    properties: []
+  - name: Right Gaze Direction X
+    description: The x component of the normalized x, y, z vector representing the
+      right gaze direction
+    argumentPath: vb.right.gaze_direction_normalized.x
+    properties: []
+  - name: Right Gaze Direction Y
+    description: The y component of the normalized x, y, z vector representing the
+      right gaze direction
+    argumentPath: vb.right.gaze_direction_normalized.y
+    properties: []
+  - name: Right Gaze Direction Z
+    description: The z component of the normalized x, y, z vector representing the
+      right gaze direction
+    argumentPath: vb.right.gaze_direction_normalized.z
+    properties: []
+  - name: Right Gaze Origin X
+    description: The x component of the x, y, z vector representing the right gaze
+      origin
+    argumentPath: vb.right.gaze_origin_mm.x
+    properties: []
+  - name: Right Gaze Origin Y
+    description: The y component of the x, y, z vector representing the right gaze
+      origin
+    argumentPath: vb.right.gaze_origin_mm.y
+    properties: []
+  - name: Right Gaze Origin Z
+    description: The z component of the x, y, z vector representing the right gaze
+      origin
+    argumentPath: vb.right.gaze_origin_mm.z
+    properties: []
+  - name: Right Pupil Diameter
+    description: The right diameter of the pupil, in millimeters
+    argumentPath: vb.right.pupil_diameter_mm
+    properties: []
+  - name: Right Pupil Position X
+    description: The x component of the normalized x, y vector representing the right
+      pupil position in the sensor area
+    argumentPath: vb.right.pupil_position_in_sensor_area.x
+    properties: []
+  - name: Right Pupil Position Y
+    description: The y component of the normalized x, y vector representing the right
+      pupil position in the sensor area
+    argumentPath: vb.right.pupil_position_in_sensor_area.y
+    properties: []

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Vive Controller
+  m_EditorClassIdentifier: 
+  streamType: Transform
+  channelFormat: 1
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: controller
+    type: Transform
+  channelDescriptions:
+  - name: Controller ID
+    description: The ID number of the controller that created this sample
+    argumentPath: int.Parse(controller.name.Split(':')[1])
+    properties: []
+  - name: 'Position X '
+    description: The X position of the vive controller in world space (meters)
+    argumentPath: controller.position.x
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Position Y
+    description: The Y position of the vive controller in world space (meters)
+    argumentPath: controller.position.y
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Position Z
+    description: The Z position of the vive controller in world space (meters)
+    argumentPath: controller.position.z
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: 'Rotation X '
+    description: The X rotation of the vive controller in degrees
+    argumentPath: controller.eulerAngles.x
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Rotation Y
+    description: The Y rotation of the vive controller in degrees
+    argumentPath: controller.eulerAngles.y
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Rotation Z
+    description: The Z rotation of the vive controller in degrees
+    argumentPath: controller.eulerAngles.z
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: 'Forward X '
+    description: The X component of the forward direction of the vive controller
+    argumentPath: controller.forward.x
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Forward Y
+    description: The Y component of the forward direction of the vive controller
+    argumentPath: controller.forward.y
+    properties:
+    - name: CoordinateSystem
+      value: Unity
+  - name: Forward Z
+    description: The Z component of the forward direction of the vive controller
+    argumentPath: controller.forward.z
+    properties:
+    - name: CoordinateSystem
+      value: Unity

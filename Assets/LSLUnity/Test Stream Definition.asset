@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Test Stream Definition
+  m_EditorClassIdentifier: 
+  streamType: Marker
+  channelFormat: 3
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: testObject
+    type: GameObject
+  - variableName: childThreshold
+    type: int
+  channelDescriptions:
+  - name: GameObjectName
+    description: The name of the game object
+    argumentPath: testObject.name
+    properties: []
+  - name: FirstChildName
+    description: The name of the first child of the game object
+    argumentPath: testObject.transform.GetChild(0).name
+    properties:
+    - name: Source
+      value: Unity
+  - name: ChildCount
+    description: How many children does this object have?
+    argumentPath: testObject.transform.childCount.ToString()
+    properties:
+    - name: Source
+      value: Unity
+  - name: ChildThresholdReached
+    description: Does this game object have the required amount of children?
+    argumentPath: 'testObject.transform.childCount >= childThreshold ? "Yes" : "No"'
+    properties:
+    - name: Source
+      value: Unity
+    - name: Application Subsystem
+      value: Testing

@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using CamoForaging.Spawner;
+using CamoForaging.LaserIndicator;
+using CamoForaging.ExperimentControl;
+using ViveSR.anipal.Eye;
+
+// IMPORTANT: THIS FILE IS COMPUTER GENERATED
+// Do not make edits directly to LSLEventRecorder.cs
+// Instead, define LSL streams using LSLStreamDescription
+// objects, add them to the LSLStreamManager object, and
+// click 'Generate LSLEventRecorder.cs'
+
+public class LSLEventRecorder
+{
+    private static LSLStreamManager lslSM;
+
+    public static void Init(LSLStreamManager streamManager) {
+        lslSM = streamManager;
+    }
+
+    __RECORDING_FUNCTIONS__
+
+}

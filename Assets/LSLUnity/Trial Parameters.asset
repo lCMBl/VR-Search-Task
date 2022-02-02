@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Trial Parameters
+  m_EditorClassIdentifier: 
+  streamType: Markers
+  channelFormat: 1
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: trial
+    type: Trial
+  channelDescriptions:
+  - name: Distractor Type
+    description: Which type of distractor was used for this trial? 0 for easy distractor,
+      1 for hard distractor
+    argumentPath: 'trial.useHardDistractors ? 1f : 0f'
+    properties: []
+  - name: Number Of Targets
+    description: The number of target characters presented this trial.
+    argumentPath: trial.numTargets
+    properties: []
+  - name: Number Of Distractors
+    description: The number of distractor characters presented this trial.
+    argumentPath: trial.numDistractors
+    properties: []
+  - name: Spawn Center Direction
+    description: Where the center of the spawn zone was, in degrees. This is calculated
+      from the XZ angle of the participant's head at trial start
+    argumentPath: trial.spawnCenterDirection
+    properties: []
+  - name: Inter Target Distance
+    description: How far apart each target was spaced horizontally from other targets,
+      in degrees
+    argumentPath: trial.interTargetDistance
+    properties: []
+  - name: Presentation Onset Delay
+    description: How long after trial start the targets and distractors appeared
+      (in seconds)
+    argumentPath: trial.delayTargetPresentation
+    properties: []

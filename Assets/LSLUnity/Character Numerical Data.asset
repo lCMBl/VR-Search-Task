@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08451b9c1eb66e428674419dff937f7, type: 3}
+  m_Name: Character Numerical Data
+  m_EditorClassIdentifier: 
+  streamType: Markers
+  channelFormat: 1
+  sampleRate: 0
+  includeUnityFrameIDChannel: 1
+  inputArguments:
+  - variableName: target
+    type: Transform
+  - variableName: participantHMD
+    type: Transform
+  channelDescriptions:
+  - name: Character ID
+    description: The ID of the character (it's index in the character pool). IDs
+      starting with 1 are targets, 2 are easy distractors, and 3 are hard distractors
+    argumentPath: float.Parse(target.name.Split('[', ']')[1])
+    properties: []
+  - name: Position X
+    description: The X position of the target in world space (meters)
+    argumentPath: target.position.x
+    properties: []
+  - name: Position Y
+    description: The Y position of the target in world space (meters)
+    argumentPath: target.position.y
+    properties: []
+  - name: Position Z
+    description: The Z position of the target in world space (meters)
+    argumentPath: target.position.z
+    properties: []
+  - name: Rotation X
+    description: The target's rotation around the X axis in degrees
+    argumentPath: target.rotation.eulerAngles.x
+    properties: []
+  - name: Rotation Y
+    description: The target's rotation around the Y axis in degrees
+    argumentPath: target.rotation.eulerAngles.y
+    properties: []
+  - name: Rotation Z
+    description: The target's rotation around the Z axis in degrees
+    argumentPath: target.rotation.eulerAngles.z
+    properties: []
+  - name: Forward X
+    description: The X component of the forward vector of this character in world
+      space
+    argumentPath: target.forward.x
+    properties: []
+  - name: Forward Y
+    description: The Y component of the forward vector of this character in world
+      space
+    argumentPath: target.forward.y
+    properties: []
+  - name: Forward Z
+    description: The Z component of the forward vector of this character in world
+      space
+    argumentPath: target.forward.z
+    properties: []
+  - name: Distance To Participant
+    description: How far away the participant is from the target, in unity meters
+    argumentPath: Vector3.Distance(participantHMD.position, target.position)
+    properties: []

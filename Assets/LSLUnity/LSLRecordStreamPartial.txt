@@ -1,0 +1,5 @@
+public static void Record__STREAM_NAME__(__ARGUMENT_INFO__) {
+    lslSM.GetOutlet("__STREAM_NAME__").push_sample(new __STREAM_FORMAT_TYPE__[] {
+        __CHANNEL_ARGUMENT_PATHS__
+    });
+}
