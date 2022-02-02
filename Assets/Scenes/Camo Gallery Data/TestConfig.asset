@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8e4f5f71819174582f468902428659, type: 3}
+  m_Name: TestConfig
+  m_EditorClassIdentifier: 
+  mainCamoPattern: {fileID: 2100000, guid: 7227ae737501ed84b9ccb4a16429837e, type: 2}
+  distractorCamoPattern: {fileID: 2100000, guid: 98a96889003daa24ab633b9670386419,
+    type: 2}
+  camoPatterns:
+  - {fileID: 2100000, guid: 2234b6078f8db0f4498dcc899a676d58, type: 2}
+  - {fileID: 2100000, guid: f68e589822ded204a9bce9d1b7f36064, type: 2}
+  - {fileID: 2100000, guid: 7fa57311fbc5aff42868850d43311589, type: 2}
+  - {fileID: 2100000, guid: 1cc22934ff518164cbe444510f53b943, type: 2}
+  - {fileID: 2100000, guid: 27515c02e2cffe740988459926674ee7, type: 2}
+  distances:
+  - 0
+  - 5
+  - 20
+  - 40
+  - 90
+  poses:
+  - {fileID: -203655887218126122, guid: e18aed7e2a623b64d8c0a21269b559c7, type: 3}
+  poseCount: 5
+  characterPrefab: {fileID: 7130726545151899146, guid: 7987ad6439840a943a425aab913ceeeb,
+    type: 3}
+  camoTransformPaths:
+  - ChrGarzaArmyOcpCrouch/CharacterRoot/Mesh/SkinnedMesh/MshRef/ChrGarzaArmyOcp/Upperbody
+  - ChrGarzaArmyOcpCrouch/CharacterRoot/Mesh/SkinnedMesh/MshRef/ChrGarzaArmyOcp/Pants
+  - ChrGarzaArmyOcpCrouch/CharacterRoot/Mesh/SkinnedMesh/MshRef/ChrGarzaArmyOcp/ArmyOcp_Parts/Helmet
+  - ChrGarzaArmyOcpCrouch/CharacterRoot/Mesh/SkinnedMesh/MshRef/ChrGarzaArmyOcp/ArmyOcp_Parts/Scarf
